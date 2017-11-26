@@ -225,6 +225,9 @@ export default class ViewTransformer extends React.Component {
         this.animateBounce();
         return;
       }
+      
+      this.props.onDoubleTap && this.props.onDoubleTap();
+      
       let pivotX = 0, pivotY = 0;
       if (gestureState.dx || gestureState.dy) {
         pivotX = gestureState.moveX - this.state.pageX;
