@@ -182,6 +182,7 @@ export default class ViewTransformer extends React.Component {
 
     let transform = {};
     if (gestureState.previousPinch && gestureState.pinch && this.props.enableScale) {
+      this.props.onPinchStart && this.props.onPinchStart();
       let scaleBy = gestureState.pinch / gestureState.previousPinch;
       let pivotX = gestureState.moveX - this.state.pageX;
       let pivotY = gestureState.moveY - this.state.pageY;
